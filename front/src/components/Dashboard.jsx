@@ -2,6 +2,7 @@
 import React from "react";
 
 import "../pages/style.css";
+import WeatherCard from "./WeatherCard";
 
 const Dashboard = () => {
   return (
@@ -36,7 +37,9 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full bg-fuchsia-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <WeatherCard /> 
+        </div>
       </div>
 
       {/** 3 eme niveau */}
