@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import '../pages/bottombar.css';
+import React, { useState } from "react";
+import "../pages/style.css";
 
 const RoomNavigationBar = () => {
   // Initialiser avec les pièces par défaut
-  const [rooms, setRooms] = useState(['Living Room', 'Bedroom', 'Kitchen', 'Backyard', 'Garage']);
-  const [activeRoom, setActiveRoom] = useState('');
+  const [rooms, setRooms] = useState([
+    "Living Room",
+    "Bedroom",
+    "Kitchen",
+    "Backyard",
+    "Garage",
+  ]);
+  const [activeRoom, setActiveRoom] = useState("");
 
   // Ajouter une nouvelle pièce
   const addRoom = () => {
@@ -24,13 +30,15 @@ const RoomNavigationBar = () => {
       {rooms.map((room, index) => (
         <div
           key={index}
-          className={`nav-item ${activeRoom === room ? 'active' : ''}`}
+          className={`nav-item ${activeRoom === room ? "active" : ""}`}
           onClick={() => changeActiveRoom(room)}
         >
           {room}
         </div>
       ))}
-      <button className="nav-add-btn" onClick={addRoom}>+</button>
+      <button className="nav-add-btn" onClick={addRoom}>
+        +
+      </button>
     </div>
   );
 };

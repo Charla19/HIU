@@ -1,24 +1,63 @@
 // Dashboard.js
-import React from 'react';
+import React from "react";
 
-
-
-import '../pages/dashboard.css';
-
+import "../pages/style.css";
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      {/* <Card className="large-card">
-        
-      </Card>
-      <Card className="chart-card">
-        
-      </Card>
-      <Card className="thermostat-card">
-        
-      </Card> */}
-      
+      {/** 1 er niveau */}
+      <div className="flex flex-row justify-between" style={{ flex: 0.5 }}>
+        <div
+          className="flex flex-col h-full bg-green-400 rounded-3xl"
+          style={{ flex: 0.58 }}
+        ></div>
+        <div
+          className="flex flex-col h-full bg-sky-400 rounded-3xl"
+          style={{ flex: 0.4 }}
+        ></div>
+      </div>
+
+      {/** 2 eme niveau */}
+      <div
+        className="flex flex-row justify-between  my-3"
+        style={{ flex: 0.25 }}
+      >
+        <div
+          className="flex flex-col h-full bg-red-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+        <div
+          className="flex flex-col h-full lg:mx-4 bg-zinc-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        >
+          
+        </div>
+        <div
+          className="flex flex-col h-full bg-fuchsia-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+      </div>
+
+      {/** 3 eme niveau */}
+      <div className="flex flex-row " style={{ flex: 0.3 }}>
+        <div
+          className="flex flex-col h-full bg-zinc-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+        <div
+          className="flex flex-col h-full mx-4 bg-indigo-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+        <div
+          className="flex flex-col h-full mr-4 bg-orange-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+        <div
+          className="flex flex-col h-full bg-amber-400 rounded-3xl"
+          style={{ flex: 0.5 }}
+        ></div>
+      </div>
     </div>
   );
 };
