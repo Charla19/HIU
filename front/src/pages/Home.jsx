@@ -28,7 +28,7 @@ function Home() {
       <div >
           <Dashboard/>
       </div>
-      <Bottombar/>
+      {/* <Bottombar/> */}
     </div>
   );
 }
