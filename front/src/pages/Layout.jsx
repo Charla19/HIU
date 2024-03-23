@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-const whiteList = ["/protected"];
+const whiteList = ["/home"];
 
 function Layout() {
   const location = useLocation();
@@ -12,7 +12,7 @@ function Layout() {
   }
 
   if (account && !whiteList.includes(location.pathname)) {
-    return <Navigate to="/protected" />;
+    return <Navigate to="/home" />;
   }
 
   return (
