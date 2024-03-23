@@ -1,5 +1,4 @@
 import React from 'react';
-import '../pages/sidebar.css';
 import { MdSpaceDashboard } from "react-icons/md";
 import { SiGoogleanalytics } from "react-icons/si";
 import { PiDevicesLight } from "react-icons/pi";
