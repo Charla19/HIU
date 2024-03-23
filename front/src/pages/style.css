@@ -9,6 +9,8 @@
 }
 
 body {
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   background-image: url("../assets/images/bg.jpg");
@@ -56,7 +58,7 @@ body {
 /* Hover effect for icons */
 .sidebar .react-icon:hover {
   /* background-color: #0A84FF ; */
-  padding: 15px;
+  /* padding: 15px; */
   border-radius: 10px;
   transform: translateY(-5px) scale(1.1); /* Légère élévation et agrandissement au survol */
   color: #fff;
@@ -67,23 +69,11 @@ body {
   /* Specific styles for the 'home' icon if needed */
 }
 
-/* bottombar css */
-.navbar2 {
-  position: relative;
-  left: 28%;
-  display: flex;
-  width: 45%;
-  align-items: center;
-  background-color: #1c1c1e; /* dark background */
-  padding: 10px;
-  border-radius: 22px; /* rounded corners */
-  overflow: hidden;
-  /* centrer horizontalement */
-}
 
 .navbar {
+  top: 65%;
   position: relative;
-  left: 32%;
+  left: 27%;
   display: flex;
   width: 45%;
   align-items: center;
@@ -145,10 +135,10 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  height: 87vh;
-  top: 28px;
-  left: 65px;
-  width: 82%;
+  height: 50vh;
+  top: 120px;
+  left: 180px;
+  width: 45%;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.5),
@@ -162,3 +152,32 @@ body {
   margin: auto;
   position: relative; /* Arrière-plan global */
 }
+
+/*================================DEBUT Propriétés pour l'animation=================================== */
+.all-board {
+  transition: transform 4s;
+  perspective: 1000px; 
+  transform: perspective(1000px) rotateY(-45deg) translateX(70px) translateY(50px);
+}
+
+.all-board:hover {
+  transform: scale(1.5) translateX(-80px) translateY(35px);
+}
+.all-board:hover .aaa {
+  transform: translateX(0px) translateY(0px);
+}
+.aaa {
+  transition: transform 0.6s;
+  transform: scale(1.01) translateX(-40px) translateY(5px);
+  box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+}
+
+.aaa {
+  animation: pulse 2s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(1.0); }
+  to { transform: scale(1.05); }
+}
+
+/*================================FIN Propriétés pour l'animation=================================== */
