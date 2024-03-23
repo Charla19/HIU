@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Bottombar from "../components/Bottombar";
 import '../pages/style.css'; // Assurez-vous que le chemin vers votre fichier CSS est correct
+import Dashboard from "../components/Dashboard";
 
 function Home() {
   const [account, setAccount] = useState(null);
@@ -24,8 +25,8 @@ function Home() {
   return (
     <div>
       <Sidebar/>
-      <div className="app">
-
+      <div >
+          <Dashboard/>
       </div>
       <Bottombar/>
     </div>

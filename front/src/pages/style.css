@@ -16,106 +16,143 @@ body {
     background-size: cover;
 }
 
-/* .sidebar {
+/* Css pour SideBar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute items evenly along the column */
+    align-items: center; /* Center items horizontally */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(39, 37, 37, 0.5));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); 
+    padding: 10px 0; 
+    width: 60px; /* Fixed width for the sidebar */
+    height: 290px; /* Adjusted height to your preference */
     position: fixed;
     
-
-    top: 95px;
-    left: 35px;
+    left: 45px;
     width: 60px;
-    height: 50%;
+    height: 50%; /* Fixed position if sidebar should stay in place */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+  }
+  
+  
+  /* Style for the React icons */
+  .sidebar .react-icon {
+    color: white; /* Icons color */
+    font-size: 24px; /* Icon size */
+    margin: 10px 0; /* Margin around icons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
+  }
+  
+  /* Hover effect for icons */
+  .sidebar .react-icon:hover {
+    /* background-color: #0A84FF ; */
+    padding: 15px;
+    border-radius: 10px;
+    transform: translateY(-5px) scale(1.1); /* Légère élévation et agrandissement au survol */
+    color: #fff;
+  }
+  
+  /* If you want to add specific styles for each icon, you can add additional classes in your component and define them here. For example: */
+  .sidebar .icon-home {
+    /* Specific styles for the 'home' icon if needed */
+  }
+  
+/* bottombar css */
+.navbar2 {
+    position: relative;
+    left: 28%;
     display: flex;
-    border-radius: 25px;
+    width: 45%;
     align-items: center;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(17px);
-    --webkit-backdrop-filter: blur(17px);
-    border-right: 1px solid rgba(255, 255, 255, 0.7);
-    transition: width 0.3s ease;
-}
-
-.sidebar:hover {
-    width: 180px;
-}
-
-
-.sidebar .links {
-    list-style: none;
-    margin-top: 20px;
-    overflow-y: auto;
-    scrollbar-width: none;
-    height: calc(100% - 140px);
-}
-
-.sidebar .links::-webkit-scrollbar {
-    display: none;
-}
-
-.links li {
-    display: flex;
-    border-radius: 4px;
-    align-items: center;
-}
-
-.links li:hover {
-    cursor: pointer;
-    background: #fff;
-}
-
-.links h4 {
-    color: #222;
-    font-weight: 500;
-    display: none;
-    margin-bottom: 10px;
-}
-
-.sidebar:hover .links h4 {
-    display: block;
-}
-
-.links hr {
-    margin: 10px 8px;
-    border: 1px solid #4c4c4c;
-}
-
-.sidebar:hover .links hr {
-    border-color: transparent;
-}
-
-.links li span {
-    padding: 12px 10px;
-}
-
-.links li a {
+    background-color: #1C1C1E; /* dark background */
     padding: 10px;
-    color: #000;
-    display: none;
-    font-weight: 500;
-    white-space: nowrap;
-    text-decoration: none;
+    border-radius: 22px; /* rounded corners */
+    overflow: hidden;
+     /* centrer horizontalement */
 }
 
-.sidebar:hover .links li a {
-    display: block;
+  
+.navbar {
+    position: relative;
+    left: 32%;
+    display: flex;
+    width: 45%;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(39, 37, 37, 0.5));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 10px;
+    border-radius: 22px; /* rounded corners */
+    overflow: hidden;
 }
 
-.links .logout-link {
-    margin-top: 20px;
-} */
-.app{
-  height: 87vh;
-  top: 28px;
-  left: 65px;
-  width: 82%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(39, 37, 37, 0.5));
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-  margin: auto;
-  position: relative;
+.nav-item {
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+  transition: background-color 0.3s; /* Animation douce pour le fond */
 }
 
+/* L'état de survol pour chaque .nav-item */
+.nav-item:hover {
+  background-color: #0A84FF;
+  border-radius: 15px;
+}
 
+/* L'état actif pour l'élément sélectionné */
+.nav-item.active {
+  background-color: #0A84FF;
+}
+
+.nav-add-btn {
+  background-color: #0A84FF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: transform 0.3s; /* Animation douce pour le bouton */
+}
+
+.nav-add-btn:hover {
+  transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+}
+/* dashboard.css */
+/* Dashboard.css */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    height: 87vh;
+    top: 28px;
+    left: 65px;
+    width: 82%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(39, 37, 37, 0.5));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin: auto;
+    position: relative; /* Arrière-plan global */
+  }
+  
+  
+  
