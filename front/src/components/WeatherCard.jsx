@@ -24,9 +24,7 @@ const WeatherCard = () => {
 
       <span className="temp">23°</span>
 
-      <div className="temp-scale">
-        <span>Celcius</span>
-      </div>
+      
     </div>
  );
 };

@@ -3,6 +3,9 @@ import React from "react";
 
 import "../pages/style.css";
 import WeatherCard from "./WeatherCard";
+import Statut from "./Statut";
+
+import Lightning from "./Lightning";
 
 const Dashboard = () => {
   return (
@@ -16,7 +19,9 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full bg-sky-400 rounded-3xl"
           style={{ flex: 0.4 }}
-        ></div>
+        >
+          
+        </div>
       </div>
 
       {/** 2 eme niveau */}
@@ -27,7 +32,9 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full bg-red-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <Lightning/>
+        </div>
         <div
           className="flex flex-col h-full lg:mx-4 bg-zinc-400 rounded-3xl"
           style={{ flex: 0.5 }}
@@ -35,7 +42,7 @@ const Dashboard = () => {
           
         </div>
         <div
-          className="flex flex-col h-full bg-fuchsia-400 rounded-3xl"
+          className="flex flex-col h-full  rounded-3xl"
           style={{ flex: 0.5 }}
         >
           <WeatherCard /> 
@@ -47,19 +54,27 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full bg-zinc-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <Statut />
+        </div>
         <div
           className="flex flex-col h-full mx-4 bg-indigo-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <Statut />
+        </div>
         <div
           className="flex flex-col h-full mr-4 bg-orange-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <Statut />
+        </div>
         <div
           className="flex flex-col h-full bg-amber-400 rounded-3xl"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <Statut />
+        </div>
       </div>
     </div>
   );
