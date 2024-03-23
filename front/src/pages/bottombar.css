@@ -1,0 +1,68 @@
+.navbar2 {
+    position: relative;
+    left: 28%;
+    display: flex;
+    width: 45%;
+    align-items: center;
+    background-color: #1C1C1E; /* dark background */
+    padding: 10px;
+    border-radius: 22px; /* rounded corners */
+    overflow: hidden;
+     /* centrer horizontalement */
+}
+
+  
+.navbar {
+    position: relative;
+    left: 32%;
+    display: flex;
+    width: 45%;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(39, 37, 37, 0.5));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 10px;
+    border-radius: 22px; /* rounded corners */
+    overflow: hidden;
+}
+
+.nav-item {
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+  transition: background-color 0.3s; /* Animation douce pour le fond */
+}
+
+/* L'état de survol pour chaque .nav-item */
+.nav-item:hover {
+  background-color: #0A84FF;
+  border-radius: 15px;
+}
+
+/* L'état actif pour l'élément sélectionné */
+.nav-item.active {
+  background-color: #0A84FF;
+}
+
+.nav-add-btn {
+  background-color: #0A84FF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: transform 0.3s; /* Animation douce pour le bouton */
+}
+
+.nav-add-btn:hover {
+  transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+}
