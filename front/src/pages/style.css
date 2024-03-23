@@ -69,13 +69,13 @@ body {
   /* Specific styles for the 'home' icon if needed */
 }
 
-
+/* Css pour Bottombar */
 .navbar {
-  top: 65%;
-  position: relative;
-  left: 27%;
+  top: 96%;
+  position: fixed;
+  left: 24%;
   display: flex;
-  width: 45%;
+  width: auto;
   align-items: center;
   background: linear-gradient(
     to right,
@@ -87,15 +87,15 @@ body {
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 10px;
+  padding: 5px;
   border-radius: 22px; /* rounded corners */
   overflow: hidden;
 }
 
 .nav-item {
   color: white;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 10px;
   cursor: pointer;
   flex-grow: 1;
   text-align: center;
@@ -134,8 +134,10 @@ body {
 .dashboard {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
+  padding-bottom: 30px;
   height: 50vh;
+  max-height: 50vh;
   top: 120px;
   left: 180px;
   width: 45%;
@@ -154,7 +156,7 @@ body {
 }
 
 /*================================DEBUT Propriétés pour l'animation=================================== */
-.all-board {
+.all-board{
   transition: transform 4s;
   perspective: 1000px; 
   transform: perspective(1000px) rotateY(-45deg) translateX(70px) translateY(50px);

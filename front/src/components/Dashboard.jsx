@@ -2,6 +2,7 @@
 import React from "react";
 
 import "../pages/style.css";
+import Bottombar from "./Bottombar";
 
 const Dashboard = () => {
   return (
@@ -58,6 +59,7 @@ const Dashboard = () => {
           style={{ flex: 0.5 }}
         ></div>
       </div>
+      <Bottombar/>
     </div>
   );
 };
