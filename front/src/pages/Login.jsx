@@ -67,7 +67,7 @@ function Login() {
           "faceAuth",
           JSON.stringify({ status: true, account: tempAccount })
         );
-        navigate("/protected", { replace: true });
+        navigate("/home", { replace: true });
       }
 
       return () => clearInterval(counterInterval);
