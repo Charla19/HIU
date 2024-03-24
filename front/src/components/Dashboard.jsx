@@ -9,7 +9,7 @@ import Bottombar from "./Bottombar";
 //images
 import bg from "../assets/images/bg.jpg";
 
-const Dashboard = () => {
+const Dashboard = ({ menuSidebar }) => {
   const [enabled, setEnabled] = useState(false);
   const [enabled1, setEnabled1] = useState(true);
   const [enabled2, setEnabled2] = useState(false);

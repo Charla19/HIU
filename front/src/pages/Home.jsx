@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
-import Bottombar from "../components/Bottombar";
-import "../pages/style.css"; // Assurez-vous que le chemin vers votre fichier CSS est correct
 import Dashboard from "../components/Dashboard";
+import Sidebar from "../components/Sidebar";
+import "../pages/style.css"; // Assurez-vous que le chemin vers votre fichier CSS est correct
 
 function Home() {
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
+  const [menuSidebar, setMenuSidebar] = useState("");
 
   useEffect(() => {
     if (!localStorage.getItem("faceAuth")) {
@@ -22,11 +22,13 @@ function Home() {
     return null;
   }
 
+  console.log("menuSidebar", menuSidebar);
+
   return (
     <div className="body">
-      <Sidebar />
+      <Sidebar menuSidebar={menuSidebar} setMenuSidebar={setMenuSidebar} />
       <div>
-        <Dashboard />
+        <Dashboard menuSidebar={menuSidebar} />
       </div>
       {/* <Bottombar/> */}
     </div>
