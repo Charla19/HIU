@@ -27,17 +27,24 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full bg-red-400 rounded-3xl aaa2-1"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <h4>Consommation Courrante</h4>
+          <p>1.5 kWh</p>
+        </div>
         <div
           className="flex flex-col h-full lg:mx-4 bg-zinc-400 rounded-3xl aaa2-2"
           style={{ flex: 0.5 }}
         >
-          
+          <h4>Humidity</h4>
+          <p>48,2 %</p>
         </div>
         <div
           className="flex flex-col h-full bg-fuchsia-400 rounded-3xl aaa2-3"
           style={{ flex: 0.5 }}
-        ></div>
+        >
+          <h4>Temperature</h4>
+          <p>68 F</p>
+        </div>
       </div>
 
       {/** 3 eme niveau */}
