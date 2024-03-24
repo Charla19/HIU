@@ -55,7 +55,7 @@ const Dashboard = ({ menuSidebar }) => {
 
   const maxValue = Math.max(...data.map((item) => item.consumption));
 
-  return (
+  return menuSidebar === "dashboard" ? (
     <div className="dashboard all-board">
       {/** 1 er niveau */}
       <div
@@ -309,6 +309,26 @@ const Dashboard = ({ menuSidebar }) => {
           </div>
         </div>
       </div>
+      <Bottombar />
+    </div>
+  ) : menuSidebar === "analytics" ? (
+    <div className="dashboard all-board">
+      <Bottombar />
+    </div>
+  ) : menuSidebar === "device" ? (
+    <div className="dashboard all-board">
+      <Bottombar />
+    </div>
+  ) : menuSidebar === "performance" ? (
+    <div className="dashboard all-board">
+      <Bottombar />
+    </div>
+  ) : menuSidebar === "preference" ? (
+    <div className="dashboard all-board">
+      <Bottombar />
+    </div>
+  ) : (
+    <div className="dashboard all-board">
       <Bottombar />
     </div>
   );

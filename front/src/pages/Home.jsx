@@ -22,8 +22,6 @@ function Home() {
     return null;
   }
 
-  console.log("menuSidebar", menuSidebar);
-
   return (
     <div className="body">
       <Sidebar menuSidebar={menuSidebar} setMenuSidebar={setMenuSidebar} />
