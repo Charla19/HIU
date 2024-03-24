@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../pages/style.css";
 
 const RoomNavigationBar = () => {
@@ -24,6 +24,10 @@ const RoomNavigationBar = () => {
   const changeActiveRoom = (roomName) => {
     setActiveRoom(roomName);
   };
+
+  useEffect(() => {
+    setActiveRoom(rooms[0]);
+  }, []);
 
   return (
     <div className="navbar">

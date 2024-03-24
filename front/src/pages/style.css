@@ -104,13 +104,14 @@
 
 /* L'état de survol pour chaque .nav-item */
 .nav-item:hover {
-  background-color: #0a84ff;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
 }
 
 /* L'état actif pour l'élément sélectionné */
 .nav-item.active {
-  background-color: #0a84ff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
 }
 
 .nav-add-btn {
