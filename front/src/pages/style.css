@@ -156,10 +156,11 @@
 }
 
 /*================================DEBUT Propriétés pour l'animation=================================== */
-.all-board{
+.all-board {
   transition: transform 4s;
-  perspective: 1000px; 
-  transform: perspective(1000px) rotateY(-45deg) translateX(70px) translateY(50px);
+  perspective: 1000px;
+  transform: perspective(1000px) rotateY(-45deg) translateX(70px)
+    translateY(50px);
 }
 
 .all-board:hover {
@@ -178,33 +179,39 @@
   animation: pulse 2s infinite ease-in-out alternate;
 }
 @keyframes pulse {
-  from { transform: scale(1.0); }
-  to { transform: scale(1.05); }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
 /*================================FIN Propriétés pour l'animation=================================== */
-.aaa2-1, .aaa2-2, .aaa2-3, .aaa1-1 {
-  background: rgba( 38, 33, 33, 0.6 ) !important;
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 6.5px );
--webkit-backdrop-filter: blur( 6.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+.aaa2-1,
+.aaa2-2,
+.aaa2-3,
+.aaa1-1 {
+  background: rgba(38, 33, 33, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
-  padding: 10px 5px 0 10px;
-  font-size: 10px;
-  color:#fff
-}
-.aaa2-1 p, .aaa2-2 p, .aaa2-3 p {
-  font-size: 25px;
-  font-weight: bold;
+  padding: 12px 16px;
+  color: #fff;
 }
 
-.aaa3-1, .aaa3-2, .aaa3-3, .aaa3-4, .aaa1-2{
-  background: rgba( 255, 255, 255, 0.35 ) !important;
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 6.5px );
--webkit-backdrop-filter: blur( 6.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+.aaa3-1,
+.aaa3-2,
+.aaa3-3,
+.aaa3-4,
+.aaa1-2 {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
