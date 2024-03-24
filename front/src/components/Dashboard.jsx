@@ -7,11 +7,12 @@ import "../pages/style.css";
 import Bottombar from "./Bottombar";
 
 //images
-import bg from "../assets/images/bg.jpg";
+import lampe_on from "../assets/images/lampe_allume.png";
+import lampe_off from "../assets/images/lampe_eteint.png";
 
 const Dashboard = ({ menuSidebar }) => {
   const [enabled, setEnabled] = useState(false);
-  const [enabled1, setEnabled1] = useState(true);
+  const [lightEnabled, setEnabled1] = useState(true);
   const [enabled2, setEnabled2] = useState(false);
   const [enabled3, setEnabled3] = useState(true);
 
@@ -68,7 +69,7 @@ const Dashboard = ({ menuSidebar }) => {
         >
           <div>
             <img
-              src={bg}
+              src={lightEnabled ? lampe_on : lampe_off}
               alt="Description"
               style={{
                 width: 130,
@@ -228,15 +229,15 @@ const Dashboard = ({ menuSidebar }) => {
           <div className="flex flex-row flex-1 justify-between items-start px-2 pt-1">
             <HiOutlineSquares2X2 className="react-icon bg-gray-400 p-1 rounded-xl" />
             <Switch
-              checked={enabled1}
+              checked={lightEnabled}
               onChange={setEnabled1}
               className={`${
-                enabled1 ? "bg-sky-500" : "bg-gray-500"
+                lightEnabled ? "bg-sky-500" : "bg-gray-500"
               } relative inline-flex h-4 w-6 items-center rounded-full`}
             >
               <span
                 className={`${
-                  enabled1 ? "translate-x-2" : "translate-x-0"
+                  lightEnabled ? "translate-x-2" : "translate-x-0"
                 } inline-block h-4 w-4 transform rounded-full bg-white transition`}
               />
             </Switch>
