@@ -2,10 +2,7 @@
 import React from "react";
 
 import "../pages/style.css";
-import WeatherCard from "./WeatherCard";
-import Statut from "./Statut";
 
-import Lightning from "./Lightning";
 import Bottombar from "./Bottombar";
 
 const Dashboard = () => {
@@ -27,14 +24,14 @@ const Dashboard = () => {
 
       {/** 2 eme niveau */}
       <div
-        className="flex flex-row justify-between  my-3 aaa aaa2"
+        className="flex flex-row justify-between   my-3 aaa aaa2"
         style={{ flex: 0.25 }}
       >
         <div
           className="flex flex-col h-full bg-red-400 rounded-3xl aaa2-1"
           style={{ flex: 0.5 }}
         >
-          <Lightning/>
+          
         </div>
         <div
           className="flex flex-col h-full lg:mx-4 bg-zinc-400 rounded-3xl aaa2-2"
@@ -43,10 +40,10 @@ const Dashboard = () => {
           
         </div>
         <div
-          className="flex flex-col h-full  rounded-3xl"
+          className="flex flex-col h-full   rounded-3xl"
           style={{ flex: 0.5 }}
         >
-          <WeatherCard /> 
+          
         </div>
       </div>
 
@@ -56,25 +53,25 @@ const Dashboard = () => {
           className="flex flex-col h-full bg-zinc-400 rounded-3xl aaa3-1"
           style={{ flex: 0.5 }}
         >
-          <Statut />
+          
         </div>
         <div
           className="flex flex-col h-full mx-4 bg-indigo-400 rounded-3xl aaa3-2"
           style={{ flex: 0.5 }}
         >
-          <Statut />
+         
         </div>
         <div
           className="flex flex-col h-full mr-4 bg-orange-400 rounded-3xl aaa3-3"
           style={{ flex: 0.5 }}
         >
-          <Statut />
+          
         </div>
         <div
           className="flex flex-col h-full bg-amber-400 rounded-3xl aaa3-4"
           style={{ flex: 0.5 }}
         >
-          <Statut />
+          
         </div>
       </div>
       <Bottombar/>
