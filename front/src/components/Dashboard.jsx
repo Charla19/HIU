@@ -44,6 +44,17 @@ const Dashboard = () => {
     window.removeEventListener("mouseup", stopDrag);
   };
 
+  const data = [
+    { month: "Jan", consumption: 50 },
+    { month: "Feb", consumption: 100 },
+    { month: "Mar", consumption: 169 }, // Highlighted bar
+    { month: "Apr", consumption: 80 },
+    { month: "May", consumption: 60 },
+    { month: "Jun", consumption: 40 },
+  ];
+
+  const maxValue = Math.max(...data.map((item) => item.consumption));
+
   return (
     <div className="dashboard all-board">
       {/** 1 er niveau */}
@@ -116,7 +127,39 @@ const Dashboard = () => {
         <div
           className="flex flex-col h-full rounded-xl aaa1-1"
           style={{ flex: 0.4 }}
-        ></div>
+        >
+          <div className="p-1 max-w-sm mx-auto bg-transparent rounded-lg shadow-md">
+            <h2 className="text-xs font-semibold text-white">
+              Power Consumption (kWh)
+            </h2>
+            <div className="space-y-2">
+              {data.map((item, index) => (
+                <div key={index} className="flex items-end">
+                  <span className=" w-8 text-white" style={{ fontSize: 8 }}>
+                    {item.month}
+                  </span>
+                  <div
+                    className="h-2 bg-gray-400 flex-1 mx-2 rounded"
+                    style={{
+                      // Calculate width as a percentage
+                      width: `${(item.consumption / maxValue) * 100}%`,
+                      // Highlight the March bar
+                      backgroundColor:
+                        item.month === "Mar" ? "#0EA5E9" : undefined,
+                    }}
+                  >
+                    {item.month === "Mar" && (
+                      <span
+                        className="text-white"
+                        style={{ fontSize: 8 }}
+                      >{`${item.consumption} kWh`}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       {/** 2 eme niveau */}
@@ -132,7 +175,7 @@ const Dashboard = () => {
           <p className="text-sm font-bold">1.5 kWh</p>
         </div>
         <div
-          className="flex flex-col h-full justify-center rounded-xl aaa2-2"
+          className="flex flex-col h-full justify-center mx-2 rounded-xl aaa2-2"
           style={{ flex: 0.5 }}
         >
           <p style={{ fontSize: 8 }}>Humidity</p>
@@ -171,10 +214,10 @@ const Dashboard = () => {
           </div>
           <div className="px-2 pb-1">
             <p className="text-left text-white" style={{ fontSize: 8 }}>
-              Gaabor
+              Doors
             </p>
             <p className="text-left text-white" style={{ fontSize: 10 }}>
-              Humidité
+              Portes
             </p>
           </div>
         </div>
@@ -200,10 +243,10 @@ const Dashboard = () => {
           </div>
           <div className="px-2 pb-1">
             <p className="text-left text-white" style={{ fontSize: 8 }}>
-              Amazon Echo
+              Light
             </p>
             <p className="text-left text-white" style={{ fontSize: 10 }}>
-              Speaker
+              Lumière
             </p>
           </div>
         </div>
@@ -229,10 +272,10 @@ const Dashboard = () => {
           </div>
           <div className="px-2 pb-1">
             <p className="text-left text-white" style={{ fontSize: 8 }}>
-              Bardi
+              Power
             </p>
             <p className="text-left text-white" style={{ fontSize: 10 }}>
-              Lampe
+              Power
             </p>
           </div>
         </div>
