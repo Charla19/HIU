@@ -37,8 +37,8 @@ export class UserStore {
   password: string | null;
 
   @Exclude()
-  @Column("text", { name: "base64_image", nullable: true })
-  base64Image: string | null;
+  @Column("text", { name: "img_url", nullable: true })
+  imgUrl: string | null;
 
   @Column("timestamp without time zone", {
     name: "created_at",

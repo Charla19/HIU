@@ -9,6 +9,8 @@ import {
 import { DevicesStore } from "./DevicesStore";
 import { HomeHistoric } from "./HomeHistoric";
 import { UserStore } from "./UserStore";
+import { WeatherStore } from "./WeatherStore";
+import { EnergyConsumptionHistoric } from "./EnergyConsumptionHistoric";
 
 @Index("home_store_pkey", ["id"], { unique: true })
 @Entity("home_store", { schema: "public" })
@@ -35,6 +37,9 @@ export class HomeStore {
   @Column("boolean", { name: "status", nullable: true })
   status: boolean | null;
 
+  @Column("integer", { name: "current_energy_consumption", nullable: true })
+  currentEnergyConsumption: number | null;
+
   @Column("timestamp without time zone", {
     name: "created_at",
     nullable: true,
@@ -44,6 +49,12 @@ export class HomeStore {
 
   @OneToMany(() => DevicesStore, (devicesStore) => devicesStore.homeStore)
   devicesStores: DevicesStore[];
+
+  @OneToMany(() => WeatherStore, (weatherStore) => weatherStore.homeStore)
+  weatherStores: WeatherStore[];
+
+  @OneToMany(() => EnergyConsumptionHistoric, (energyConsumptionHistoric) => energyConsumptionHistoric.homeStore)
+  energyConsumptionHistorics: EnergyConsumptionHistoric[];
 
   @OneToMany(() => HomeHistoric, (homeHistoric) => homeHistoric.homeStore)
   homeHistorics: HomeHistoric[];

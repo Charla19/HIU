@@ -1,9 +1,9 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne } from "typeorm";
 import { HomeStore } from "./HomeStore";
 
-@Index("devices_store_pkey", ["id"], { unique: true })
-@Entity("devices_store", { schema: "public" })
-export class DevicesStore {
+@Index("energy_consumption_historic_pkey", ["id"], { unique: true })
+@Entity("energy_consumption_historic", { schema: "public" })
+export class EnergyConsumptionHistoric {
   @Column("uuid", {
     primary: true,
     name: "id",
@@ -11,11 +11,8 @@ export class DevicesStore {
   })
   id: string;
 
-  @Column("character varying", { name: "label", nullable: true, length: 255 })
-  label: string | null;
-
-  @Column("boolean", { name: "status", nullable: true })
-  status: boolean | null;
+  @Column("integer", { name: "energy", nullable: true })
+  energy: number | null;
 
   @Column("timestamp without time zone", {
     name: "created_at",

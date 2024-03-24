@@ -4,6 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'node:path';
 import { AuthModule } from './auth/auth.module';
+import { WeatherModule } from './weather/weather.module';
+import { OllamaModule } from './ollama/ollama.module';
+import { EnergyModule } from './energy/energy.module';
 
 @Module({
   imports: [
@@ -20,6 +23,7 @@ import { AuthModule } from './auth/auth.module';
         database: process.env["DB_NAME"],
         schema: process.env["DB_SCHEMA"],
         entities: [__dirname + "/entities/*.js"],
+        // autoLoadEntities: true,
         synchronize: true,
       })
     }),
@@ -27,6 +31,9 @@ import { AuthModule } from './auth/auth.module';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'uploads')
     }),
+    WeatherModule,
+    OllamaModule,
+    EnergyModule,
   ]
 })
 export class AppModule {}
