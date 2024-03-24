@@ -1,16 +1,48 @@
 // Dashboard.js
 import { Switch } from "@headlessui/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 
 import "../pages/style.css";
 import Bottombar from "./Bottombar";
+
+//images
+import bg from "../assets/images/bg.jpg";
 
 const Dashboard = () => {
   const [enabled, setEnabled] = useState(false);
   const [enabled1, setEnabled1] = useState(true);
   const [enabled2, setEnabled2] = useState(false);
   const [enabled3, setEnabled3] = useState(true);
+
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef(null);
+
+  const startDrag = (e) => {
+    // Prevent default behavior
+    e.preventDefault();
+
+    // Add mouse move and mouse up listeners to the window
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", stopDrag);
+  };
+
+  const onMouseMove = (e) => {
+    if (!containerRef.current) return;
+
+    // Calculate the width of the white bar based on the mouse position
+    const containerRect = containerRef.current.getBoundingClientRect();
+    const newWidth = e.clientX - containerRect.left;
+
+    // Update the width state, but don't go outside the bounds of the container
+    setWidth(Math.max(0, Math.min(newWidth, containerRect.width)));
+  };
+
+  const stopDrag = () => {
+    // Remove the event listeners when the mouse is released
+    window.removeEventListener("mousemove", onMouseMove);
+    window.removeEventListener("mouseup", stopDrag);
+  };
 
   return (
     <div className="dashboard all-board">
@@ -20,11 +52,67 @@ const Dashboard = () => {
         style={{ flex: 0.5 }}
       >
         <div
-          className="flex flex-col h-full  rounded-xl aaa1-2"
+          className="flex flex-row justify-between items-center  h-full  rounded-xl aaa1-2"
           style={{ flex: 0.58 }}
         >
-          
+          <div>
+            <img
+              src={bg}
+              alt="Description"
+              style={{
+                width: 130,
+                height: 120,
+                resizeMode: "cover",
+              }}
+            />
+          </div>
+
+          <div className="flex flex-1 flex-col">
+            <div className="flex flex-row flex-1 justify-between  px-2">
+              <div className="flex flex-col">
+                <p style={{ fontSize: 8 }} className="text-gray-300">
+                  Device
+                </p>
+                <p style={{ fontSize: 10 }} className="text-gray-300">
+                  Lampe LED
+                </p>
+              </div>
+              <HiOutlineSquares2X2 className="react-icon bg-gray-400 p-1 rounded-xl" />
+            </div>
+
+            <div
+              className="flex flex-row flex-1 justify-between px-4 mx-2 rounded-md py-2  h-14"
+              style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            >
+              <div>
+                <p className="text-white">4H 02M</p>
+                <p className="text-white" style={{ fontSize: 6 }}>
+                  Temps d'usage
+                </p>
+              </div>
+              <div>
+                <p className="text-white">10 W</p>
+                <p className="text-white" style={{ fontSize: 6 }}>
+                  Consommation
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <div
+                ref={containerRef}
+                className="bg-gray-300 h-4 w-52 rounded-lg mx-2 relative"
+                onMouseDown={startDrag} // Start the drag on mouse down
+              >
+                <div
+                  className="bg-white h-4 rounded-lg absolute"
+                  style={{ width: width < 210 ? `${width}px` : "210px" }}
+                ></div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div
           className="flex flex-col h-full rounded-xl aaa1-1"
           style={{ flex: 0.4 }}
