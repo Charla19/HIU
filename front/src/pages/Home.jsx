@@ -7,7 +7,7 @@ import "../pages/style.css"; // Assurez-vous que le chemin vers votre fichier CS
 function Home() {
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
-  const [menuSidebar, setMenuSidebar] = useState("");
+  const [menuSidebar, setMenuSidebar] = useState("dashboard");
 
   useEffect(() => {
     if (!localStorage.getItem("faceAuth")) {

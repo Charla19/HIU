@@ -12,12 +12,14 @@ import lampe_off from "../assets/images/lampe_eteint.png";
 
 const Dashboard = ({ menuSidebar }) => {
   const [enabled, setEnabled] = useState(false);
-  const [lightEnabled, setEnabled1] = useState(true);
+  const [lightEnabled, setLightEnabled] = useState(true);
   const [enabled2, setEnabled2] = useState(false);
   const [enabled3, setEnabled3] = useState(true);
 
   const [width, setWidth] = useState(0);
   const containerRef = useRef(null);
+
+  const fetchDataToApi = () => {};
 
   const startDrag = (e) => {
     // Prevent default behavior
@@ -230,7 +232,7 @@ const Dashboard = ({ menuSidebar }) => {
             <HiOutlineSquares2X2 className="react-icon bg-gray-400 p-1 rounded-xl" />
             <Switch
               checked={lightEnabled}
-              onChange={setEnabled1}
+              onChange={setLightEnabled}
               className={`${
                 lightEnabled ? "bg-sky-500" : "bg-gray-500"
               } relative inline-flex h-4 w-6 items-center rounded-full`}

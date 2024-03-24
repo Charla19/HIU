@@ -1,8 +1,7 @@
 import React from "react";
-import { CgPerformance } from "react-icons/cg";
+import { CgLogOut, CgPerformance } from "react-icons/cg";
 import { MdRoomPreferences, MdSpaceDashboard } from "react-icons/md";
 import { PiDevicesLight } from "react-icons/pi";
-import { RxAvatar } from "react-icons/rx";
 import { SiGoogleanalytics } from "react-icons/si";
 
 const Sidebar = ({ menuSidebar, setMenuSidebar }) => {
@@ -48,13 +47,16 @@ const Sidebar = ({ menuSidebar, setMenuSidebar }) => {
         }}
         onClick={() => setMenuSidebar("preference")}
       />
-      <RxAvatar
+      <CgLogOut
         className="react-icon p-1"
         style={{
           backgroundColor:
             menuSidebar === "profil" ? "rgba(255, 255, 255, 0.2)" : "",
         }}
-        onClick={() => setMenuSidebar("profil")}
+        onClick={() => {
+          localStorage.removeItem("faceAuth");
+          window.location.reload();
+        }}
       />
     </div>
   );
