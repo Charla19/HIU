@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
-import AuthIdle from "../assets/images/auth-idle.svg";
-import AuthFace from "../assets/images/auth-face.svg";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import AuthFace from "../assets/images/auth-face.svg";
+import AuthIdle from "../assets/images/auth-idle.svg";
 
 function Login() {
   const [tempAccount, setTempAccount] = useState("");
@@ -159,7 +159,7 @@ function Login() {
 
   if (imageError) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-[24px] max-w-[840px] mx-auto">
+      <div className="bg-white min-h-screen flex flex-col items-center justify-center gap-[24px] max-w-[840px] mx-auto">
         <h2 className="text-center text-3xl font-extrabold tracking-tight text-rose-700 sm:text-4xl">
           <span className="block">
             Oups ! Il n'y a pas de photo de profil associée à ce compte.
