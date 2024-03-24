@@ -1,6 +1,6 @@
 // Dashboard.js
 import { Switch } from "@headlessui/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 
 import "../pages/style.css";
@@ -12,14 +12,44 @@ import lampe_off from "../assets/images/lampe_eteint.png";
 
 const Dashboard = ({ menuSidebar }) => {
   const [enabled, setEnabled] = useState(false);
-  const [lightEnabled, setLightEnabled] = useState(true);
+  const [lightEnabled, setLightEnabled] = useState(false);
   const [enabled2, setEnabled2] = useState(false);
   const [enabled3, setEnabled3] = useState(true);
 
   const [width, setWidth] = useState(0);
   const containerRef = useRef(null);
 
-  const fetchDataToApi = () => {};
+  const fetchDataToApi = async () => {
+    try {
+      let res_light = await fetch("https://things-api-rjut.onrender.com/lamp");
+      let data_light = await res_light.json();
+      setLightEnabled(data_light);
+    } catch (e) {
+      alert(
+        "Erreur lors de la récupération de l'état de la lampe",
+        JSON.stringify(e)
+      );
+    }
+  };
+
+  const changeStatusLight = async () => {
+    try {
+      let res = await fetch(
+        `https://things-api-rjut.onrender.com/lamp/${!lightEnabled}`,
+        {
+          method: "POST",
+        }
+      );
+      if (res.status === 200) {
+        setLightEnabled(!lightEnabled);
+      }
+    } catch (e) {
+      alert(
+        "Erreur lors de la modification de l'état de la lampe",
+        JSON.stringify(e)
+      );
+    }
+  };
 
   const startDrag = (e) => {
     // Prevent default behavior
@@ -57,6 +87,10 @@ const Dashboard = ({ menuSidebar }) => {
   ];
 
   const maxValue = Math.max(...data.map((item) => item.consumption));
+
+  useEffect(() => {
+    fetchDataToApi();
+  }, []);
 
   return menuSidebar === "dashboard" ? (
     <div className="dashboard all-board">
@@ -232,7 +266,7 @@ const Dashboard = ({ menuSidebar }) => {
             <HiOutlineSquares2X2 className="react-icon bg-gray-400 p-1 rounded-xl" />
             <Switch
               checked={lightEnabled}
-              onChange={setLightEnabled}
+              onChange={changeStatusLight}
               className={`${
                 lightEnabled ? "bg-sky-500" : "bg-gray-500"
               } relative inline-flex h-4 w-6 items-center rounded-full`}
