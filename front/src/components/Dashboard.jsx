@@ -33,7 +33,6 @@ const Dashboard = ({ menuSidebar }) => {
   };
 
   const changeStatusLight = async () => {
-    setLightEnabled(!lightEnabled);
     try {
       let res = await fetch(
         `https://things-api-rjut.onrender.com/lamp/${!lightEnabled}`,
