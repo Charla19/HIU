@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import User from "../components/User";
 import { RadioGroup } from "@headlessui/react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
+import User from "../components/User";
 
 function UserSelect() {
   const [progress, setProgress] = useState(0);
@@ -50,8 +50,8 @@ function UserSelect() {
   return (
     <>
       <ProgressBar progressProps={progress} />
-      <div className="h-full flex flex-col items-center justify-center gap-[24px] w-full max-w-[720px] mx-auto">
-        <h1 className="text-2xl font-semibold">
+      <div className="user_select h-full my-2 flex flex-col items-center justify-center gap-[24px] w-full max-w-[720px] mx-auto">
+        <h1 className="text-2xl font-semibold text-gray-200">
           Confirmer votre compte existant pour continuer
         </h1>
         <div className="w-full p-4 text-right">
@@ -70,14 +70,14 @@ function UserSelect() {
             </RadioGroup>
 
             {customUser.length > 0 && (
-              <p className="mt-4 text-center text-gray-400">
+              <p className="mt-4 text-center text-gray-200">
                 - ou ajouter une autre compte -
               </p>
             )}
 
             <div className="flex flex-col items-center justify-center w-full mt-3">
               <div className="w-full my-3">
-                <p className="text-sm text-gray-600 font-semibold dark:text-gray-400 text-left">
+                <p className="text-sm text-gray-200 font-semibold dark:text-gray-400 text-left">
                   Votre prénom
                 </p>
                 <input

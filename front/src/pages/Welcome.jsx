@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 function Welcome() {
   return (
-    <div className="bg-white py-40 md:pt-60 md:pb-24">
-      <div className="mx-auto max-w-7xl">
+    <div className=" py-40 md:pb-24">
+      <div className="welcome mx-40">
         <div className="text-center">
-          <h1 className="block text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+          <h1 className="block text-4xl tracking-tight font-extrabold text-gray-200 sm:text-5xl md:text-6xl">
             Bienvenue à
           </h1>
-          <h1 className="block text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-sky-900">
+          <h1 className="block text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-sky-900">
             Pocket home
           </h1>
-          <p className="mt-8 text-md text-gray-600 max-w-3xl mx-4 md:mx-16 lg:mx-auto">
+          <p className="mt-8 text-md text-gray-200 max-w-3xl mx-4 md:mx-16 lg:mx-auto">
             Bonjour maître, je vous souhaite la bienvenue dans votre sanctuaire
             numérique. En tant que gardien de votre confort et sécurité, je suis
             là pour obéir à vos commandes et anticiper vos besoins. D'un simple

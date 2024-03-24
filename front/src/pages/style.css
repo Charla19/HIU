@@ -8,6 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+body,
 .body {
   align-items: center;
   justify-content: center;
@@ -53,6 +54,47 @@
   font-size: 24px; /* Icon size */
   margin: 10px 0; /* Margin around icons */
   transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
+}
+
+.welcome {
+  padding: 40px 0px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(39, 37, 37, 0.5)
+  );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid;
+}
+
+.login {
+  padding: 0px 20px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(39, 37, 37, 0.5)
+  );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid;
+}
+
+.user_select {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(39, 37, 37, 0.5)
+  );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid;
 }
 
 /* Hover effect for icons */

@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
-import AuthIdle from "../assets/images/auth-idle.svg";
-import AuthFace from "../assets/images/auth-face.svg";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import AuthFace from "../assets/images/auth-face.svg";
+import AuthIdle from "../assets/images/auth-idle.svg";
 
 function Login() {
   const [tempAccount, setTempAccount] = useState("");
@@ -38,11 +38,13 @@ function Login() {
   useEffect(() => {
     setTempAccount(location?.state?.account);
   }, []);
+
   useEffect(() => {
     if (tempAccount) {
       loadModels()
         .then(async () => {
           const labeledFaceDescriptors = await loadLabeledImages();
+          console.log("labeledFaceDescriptors", labeledFaceDescriptors);
           setLabeledFaceDescriptors(labeledFaceDescriptors);
         })
         .then(() => setModelsLoaded(true));
@@ -100,6 +102,8 @@ function Login() {
       });
 
       const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors);
+
+      console.log("faceMatcher", faceMatcher);
 
       const results = resizedDetections.map((d) =>
         faceMatcher.findBestMatch(d.descriptor)
@@ -203,30 +207,30 @@ function Login() {
   }
 
   return (
-    <div className="h-full flex flex-col items-center justify-center gap-[24px] max-w-[720px] mx-auto">
+    <div className="login h-full flex flex-col my-2 items-center justify-center gap-[24px] max-w-[720px] mx-auto">
       {!localUserStream && !modelsLoaded && (
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-200 sm:text-4xl">
           <span className="block">
             Vous tentez de vous connecter avec votre visage.
           </span>
-          <span className="block text-sky-600 mt-2">
+          <span className="block text-sky-400 mt-2">
             Chargement des modèles...
           </span>
         </h2>
       )}
       {!localUserStream && modelsLoaded && (
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          <span className="block text-sky-600 mt-2">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-200 sm:text-4xl">
+          <span className="block text-sky-400 mt-2">
             Scannez votre visage pour vous connecter.
           </span>
         </h2>
       )}
       {localUserStream && loginResult === "SUCCESS" && (
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          <span className="block text-sky-600 mt-2">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-200 sm:text-4xl">
+          <span className="block text-sky-400 mt-2">
             Nous avons réussi à reconnaître votre visage
           </span>
-          <span className="block text-sky-600 mt-2">
+          <span className="block text-sky-400 mt-2">
             Veuillez attendre encore {counter} secondes...
           </span>
         </h2>
@@ -239,7 +243,7 @@ function Login() {
         </h2>
       )}
       {localUserStream && !faceApiLoaded && loginResult === "PENDING" && (
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-gray-200 sm:text-4xl">
           <span className="block mt-[56px]">Scan visage...</span>
         </h2>
       )}
@@ -274,12 +278,12 @@ function Login() {
                 <img
                   alt="loading models"
                   src={AuthFace}
-                  className="cursor-pointer my-8 mx-auto object-cover h-[272px]"
+                  className="cursor-pointer my-8 mx-auto object-cover h-[272px] bg-white rounded-lg"
                 />
                 <button
                   onClick={getLocalUserVideo}
                   type="button"
-                  className="flex justify-center items-center w-full py-2.5 px-5 mr-2 text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 rounded-lg border border-gray-200 inline-flex items-center"
+                  className="flex justify-center items-center w-full py-2.5 px-5 mr-2 text-sm font-medium text-white bg-sky-400 hover:bg-sky-700 rounded-lg border border-gray-200 inline-flex items-center"
                 >
                   Scan mon visage
                 </button>
@@ -289,12 +293,12 @@ function Login() {
                 <img
                   alt="loading models"
                   src={AuthIdle}
-                  className="cursor-pointer my-8 mx-auto object-cover h-[272px]"
+                  className="cursor-pointer my-8 mx-auto object-cover h-[272px] bg-white"
                 />
                 <button
                   disabled
                   type="button"
-                  className="cursor-not-allowed flex justify-center items-center w-full py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 inline-flex items-center"
+                  className="cursor-not-allowed flex justify-center items-center w-full py-2.5 px-5 text-sm font-medium text-gray-200 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 inline-flex items-center"
                 >
                   <svg
                     aria-hidden="true"
