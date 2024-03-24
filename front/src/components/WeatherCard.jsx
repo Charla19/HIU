@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 // import './WeatherCard.css'; // Assurez-vous d'avoir un fichier CSS correspondant
 
 const WeatherCard = () => {
- return (
+  return (
     <div className="card">
       <div className="container">
         <div className="cloud front">
@@ -18,15 +18,17 @@ const WeatherCard = () => {
       </div>
 
       <div className="card-header">
-        <span>Messadine, Susah<br/>Tunisia</span>
-        <span>March 13</span>
+        <span>
+          Antananarivo
+          <br />
+          Madagascar
+        </span>
+        <span>Mars 13</span>
       </div>
 
       <span className="temp">23°</span>
-
-      
     </div>
- );
+  );
 };
 
 export default WeatherCard;
