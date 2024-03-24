@@ -183,7 +183,7 @@ body {
 }
 
 /*================================FIN Propriétés pour l'animation=================================== */
-.aaa2-1, .aaa2-2, .aaa2-3 {
+.aaa2-1, .aaa2-2, .aaa2-3, .aaa1-1 {
   background: rgba( 38, 33, 33, 0.6 ) !important;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 6.5px );
@@ -198,4 +198,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .aaa2-1 p, .aaa2-2 p, .aaa2-3 p {
   font-size: 25px;
   font-weight: bold;
+}
+
+.aaa3-1, .aaa3-2, .aaa3-3, .aaa3-4, .aaa1-2{
+  background: rgba( 255, 255, 255, 0.35 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6.5px );
+-webkit-backdrop-filter: blur( 6.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

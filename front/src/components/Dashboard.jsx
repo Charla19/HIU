@@ -14,7 +14,7 @@ const Dashboard = () => {
           style={{ flex: 0.58 }}
         ></div>
         <div
-          className="flex flex-col h-full bg-sky-400 rounded-3xl aaa1-1"
+          className="flex flex-col h-full bg-sky-400 rounded-3xl aaa1-2"
           style={{ flex: 0.4 }}
         ></div>
       </div>
